@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:student_app/controller/recipe_provider/recipe_provider.dart';
 import 'package:student_app/view/presentetion/login_page/login.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -7,6 +9,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     navigator(context);
+    Provider.of<GetRecipeProvider>(context,listen: false).fetchRecipes();
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(

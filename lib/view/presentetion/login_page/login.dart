@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:student_app/controller/login_page_provider/login_provider.dart';
-import 'package:student_app/view/presentetion/splash_screen/splash_screen.dart';
+import 'package:student_app/view/presentetion/home_page/home_page.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -70,7 +70,7 @@ class LoginScreen extends StatelessWidget {
                             await Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const  SplashScreen(),
+                                builder: (context) => const  HomeScreen(),
                               ),
                             );
                           } else {
