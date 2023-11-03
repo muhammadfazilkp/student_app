@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:student_app/controller/login_page_provider/login_provider.dart';
 import 'package:student_app/controller/recipe_provider/recipe_provider.dart';
-
+import 'package:student_app/controller/table_provider/feath_table.dart';
 import 'package:student_app/view/presentetion/splash_screen/splash_screen.dart';
 
 void main() {
@@ -17,7 +17,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context)=>LoginProvider()),
-        ChangeNotifierProvider(create: (context)=>GetRecipeProvider())
+        ChangeNotifierProvider(create: (context)=>GetRecipeProvider()),
+        ChangeNotifierProvider(create: (context)=>StoringTable())
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sqflite/sqflite.dart';
+
 import 'package:student_app/controller/database_connection/connection.dart';
 import 'package:student_app/model/student.dart';
 
@@ -13,9 +13,17 @@ class StoringTable extends ChangeNotifier {
       "rollnumber": studentCard.rollnumber,
       "email": studentCard.email,
     };
-    await db.insert('StudentsCards', data,
-        conflictAlgorithm: ConflictAlgorithm.replace);
-    await getAllStudentsCards();
+  //  final result= await db.insert('StudentsCards', data);
+  //   await getAllStudentsCards();
+  final result= await db.insert("StudentsCards",studentCard.toMap());
+
+
+    if(result!=0){
+      print("sucess");
+      await showTableContents();
+    }else{
+      print('error');
+    }
   }
 
   Future<void> getAllStudentsCards() async {
@@ -33,4 +41,14 @@ class StoringTable extends ChangeNotifier {
         .toList());
     // update();
   }
+
+  Future<void> showTableContents() async {
+  final db = await databaseConnection();
+  final List<Map<String, dynamic>> tableData = await db.query('StudentsCards');
+
+  // Printing the contents of the table
+  tableData.forEach((row) {
+    print('ID: ${row['id']}, Name: ${row['name']}, Roll Number: ${row['rollnumber']}, Email: ${row['email']}');
+  });
+}
 }

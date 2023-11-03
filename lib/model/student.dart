@@ -10,4 +10,16 @@ class StudentModel {
       required this.rollnumber,
       required this.email,
      });
+
+
+     Map<String,dynamic>toMap(){
+      Map<String,dynamic> data={
+        "id":id,
+        "name":name,
+        "rollnumber":rollnumber,
+        "email":email
+
+      };
+      return data;
+     }
 }
