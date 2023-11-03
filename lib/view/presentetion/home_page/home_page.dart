@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:student_app/controller/recipe_provider/recipe_provider.dart';
+import 'package:student_app/view/presentetion/student_adding_page/student.dart';
 
 class HomeScreen extends StatelessWidget {
   const  HomeScreen({Key? key}) : super(key: key);
@@ -56,6 +57,7 @@ class HomeScreen extends StatelessWidget {
                       final data = value.recipes[index];
 
                       return InkWell(
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=> const StudentAddingScreen())),
                         child: Card(
                           child: SingleChildScrollView(
                             child: Column(

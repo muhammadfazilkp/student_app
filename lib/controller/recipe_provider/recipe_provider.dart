@@ -1,12 +1,11 @@
- import 'dart:convert';
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:student_app/model/model.dart';
 import 'package:http/http.dart' as http;
 
-
-class GetRecipeProvider extends ChangeNotifier{
-   List<FoodRecipe> recipes = [];
-  // List to store multiple FoodRecipe objects
+class GetRecipeProvider extends ChangeNotifier {
+  List<FoodRecipe> recipes = [];
+  //List to store multiple FoodRecipe objects//
 
   Future<void> fetchRecipes() async {
     final response = await http.get(Uri.parse(
@@ -23,10 +22,4 @@ class GetRecipeProvider extends ChangeNotifier{
       throw Exception('Failed to load data');
     }
   }
-
-
-
-
-
-
 }

@@ -9,5 +9,20 @@ TextEditingController passwordController =TextEditingController();
 
 
 
+//studentadding HintText................&& controllers......
+ List<String> hintText = [
+    "Name",
+    "rollnumber",
+    "eamil",
+    
+  ];
+  TextEditingController studentNameController =TextEditingController();
+  TextEditingController rollnumber =TextEditingController();
+TextEditingController emailController =TextEditingController();
+
+
+
+
+
 
 }
