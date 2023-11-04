@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:student_app/model/student.dart';
 
 class LoginProvider extends ChangeNotifier {
   TextEditingController usernameController = TextEditingController();
@@ -17,7 +18,32 @@ class LoginProvider extends ChangeNotifier {
   TextEditingController rollnumber = TextEditingController();
   TextEditingController emailController = TextEditingController();
 
-//.................///
+//.........editpageController........///
+
+
+
+ TextEditingController editnameController = TextEditingController();
+  TextEditingController editrollnumber = TextEditingController();
+  TextEditingController editemailController = TextEditingController();
+
+
+  addingDataToControllers(StudentModel studentModel){
+    editemailController.text=studentModel.email;
+    editnameController.text=studentModel.name;
+    editrollnumber.text=studentModel.rollnumber;
+    notifyListeners();
+  }
+
+
+
+
+
+
+
+
+
+
+//......................
   File? profileImage;
 
   Future<void> getphoto() async {

@@ -1,7 +1,7 @@
-import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:sqflite/sqflite.dart';
 
 import 'package:student_app/controller/database_connection/connection.dart';
 import 'package:student_app/model/student.dart';
@@ -48,27 +48,10 @@ class StoringTable extends ChangeNotifier {
     // update();
   }
 
-  // Future<void> showTableContents() async {
-  // final db = await databaseConnection();
-  // final List<Map<String, dynamic>> tableData = await db.query('StudentsCards');
-
-  //   List<StudentModel> data= tableData
-  //       .map((cardMap) => StudentModel(
-  //             id: cardMap['id'],
-  //             name: cardMap['name'],
-  //             rollnumber: cardMap['rollnumber'],
-  //             email: cardMap['email'],
-  //             image: cardMap['image']
-  //           ))
-  //       .toList();
-  //  studentList=data;     
-
-  // Printing the contents of the table
-  
-// }
-
-
-
+ Future<void> editStudentCard(StudentModel studentCard) async {
+  Database database = await databaseConnection();
+  await database.update('StudentsCards', studentCard.toMap(), where: 'id =${studentCard.id}', whereArgs: [studentCard.id]);
+}
 
 
 

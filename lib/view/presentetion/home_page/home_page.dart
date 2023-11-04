@@ -57,7 +57,7 @@ class HomeScreen extends StatelessWidget {
                       final data = value.recipes[index];
 
                       return InkWell(
-                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=> const StudentAddingScreen())),
+                        // onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=> const StudentAddingScreen())),
                         child: Card(
                           child: SingleChildScrollView(
                             child: Column(
@@ -110,6 +110,35 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
+        floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: Colors.pink[200],
+        onPressed: () {
+         Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const StudentAddingScreen()));
+        },
+        label: const  Text(
+          'Add student',
+         
+        ),
+        icon: const Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
+      ),
     );
   }
-}
+    
+    
+
+
+
+
+
+
+
+
+
+  }
+
+
+
+
