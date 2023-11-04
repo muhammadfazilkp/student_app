@@ -1,11 +1,20 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:student_app/controller/login_page_provider/login_provider.dart';
 import 'package:student_app/controller/recipe_provider/recipe_provider.dart';
 import 'package:student_app/controller/table_provider/feath_table.dart';
+import 'package:student_app/firebase_options.dart';
 import 'package:student_app/view/presentetion/splash_screen/splash_screen.dart';
 
-void main() {
+void main()async {
+
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const MyApp());
 }
 

@@ -14,7 +14,8 @@ Future<Database> databaseConnection() async {
         id INTEGER PRIMARY KEY,
         name TEXT,
         rollnumber TEXT,
-        email TEXT
+        email TEXT,
+        image TEXT
       )
     ''');
   });

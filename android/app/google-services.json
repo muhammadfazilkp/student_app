@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "978632402654",
+    "project_id": "axolon-test",
+    "storage_bucket": "axolon-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:978632402654:android:ecc2d4fbd7ceb0a884044f",
+        "android_client_info": {
+          "package_name": "com.example.student_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeuocl8uxJSEilX7tNbYqDwSSBfRotfNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

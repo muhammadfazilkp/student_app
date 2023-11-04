@@ -3,12 +3,14 @@ class StudentModel {
   final String name;
   final String rollnumber;
   final String email;
+  final String image;
   
   StudentModel(
       {this.id,
       required this.name,
       required this.rollnumber,
       required this.email,
+      required this.image
      });
 
 
@@ -17,7 +19,8 @@ class StudentModel {
         "id":id,
         "name":name,
         "rollnumber":rollnumber,
-        "email":email
+        "email":email,
+        "image":image
 
       };
       return data;
